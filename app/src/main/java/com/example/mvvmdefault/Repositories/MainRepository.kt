@@ -1,6 +1,6 @@
-package com.example.mvvmdefault.repositories
+package com.example.mvvmdefault.Repositories
 
-import com.example.mvvmdefault.services.RetrofitService
+import com.example.mvvmdefault.Services.RetrofitService
 
 class MainRepository constructor(private val retrofitService: RetrofitService) {
 // nome é main por conta da MainActivity, caso fosse SignUpActivity seria SignUpRepository

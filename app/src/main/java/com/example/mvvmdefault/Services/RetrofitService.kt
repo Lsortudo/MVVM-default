@@ -1,6 +1,6 @@
-package com.example.mvvmdefault.services
+package com.example.mvvmdefault.Services
 
-import com.example.mvvmdefault.models.Photo
+import com.example.mvvmdefault.Models.Photo
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

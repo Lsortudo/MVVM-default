@@ -1,4 +1,4 @@
-package com.example.mvvmdefault.models
+package com.example.mvvmdefault.Models
 
 data class Photo(
     var id: Int,

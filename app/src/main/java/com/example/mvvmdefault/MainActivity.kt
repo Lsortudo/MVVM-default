@@ -1,5 +1,7 @@
 package com.example.mvvmdefault
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,7 +24,10 @@ class MainActivity : AppCompatActivity() {
 
     private val retrofitService = RetrofitService.getInstance()
 
-    private val adapter = MainAdapter {}
+    private val adapter = MainAdapter {
+        openLink(it.url)
+        // isso funciona porém queria o outro openLink(it.download_url)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +62,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
         viewModel.getAllPhotos()
+    }
+    private fun openLink(link: String) {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+        startActivity(browserIntent)
     }
 }

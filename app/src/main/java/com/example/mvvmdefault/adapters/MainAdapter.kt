@@ -51,7 +51,7 @@ class MainViewHolder (val binding: ItemPhotoBinding) : RecyclerView.ViewHolder(b
 
         Glide.with(itemView.context)
             .applyDefaultRequestOptions(requestOptions)
-            .load(photo.thumbnailUrl)
+            .load(photo.download_url)
             .into(binding.ivThumbnail)
 
         itemView.setOnClickListener{

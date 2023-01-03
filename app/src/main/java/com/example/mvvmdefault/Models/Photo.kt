@@ -5,6 +5,8 @@ data class Photo(
     var author: String,
     var width: Int,
     var height: Int,
-    var goToUrl: String,
-    var thumbnailUrl: String,
+    var url: String,
+    var download_url: String,
+    //var thumbnailUrl: String,
+
 )

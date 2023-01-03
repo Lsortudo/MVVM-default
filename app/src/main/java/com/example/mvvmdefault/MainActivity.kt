@@ -2,6 +2,9 @@ package com.example.mvvmdefault
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.mvvmdefault.Repositories.MainRepository
 import com.example.mvvmdefault.Services.RetrofitService
@@ -38,5 +41,23 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
 
+        viewModel.photoList.observe(this, Observer {
+            Log.i("mvvmLifeCycle", "onStart")
+            adapter.setPhotoList(it)
+        })
+
+        viewModel.errorMessage.observe(this, Observer {
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        })
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        viewModel.getAllPhotos()
+    }
 }

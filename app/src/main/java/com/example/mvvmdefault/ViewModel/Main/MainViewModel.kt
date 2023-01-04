@@ -18,7 +18,19 @@ class MainViewModel constructor(private val repository: MainRepository) : ViewMo
         val request = repository.getAllPhotos()
         request.enqueue(object : Callback<List<Photo>> {
             override fun onResponse(call: Call<List<Photo>>, response: Response<List<Photo>>) {
-                photoList.postValue(response.body())
+
+                // Basic validation for request/response
+                if (response.isSuccessful) {
+
+                    photoList.postValue(response.body())
+
+                } else {
+
+                    errorMessage.postValue("Error - Não consegui fazer o request por algum motivo")
+
+                }
+
+
             }
 
             override fun onFailure(call: Call<List<Photo>>, t: Throwable) {

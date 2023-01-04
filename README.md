@@ -5,7 +5,7 @@
 This is a simple idea just to pratice concepts like MVVM, Lifecycle, LiveData and Design Patterns
 
 ## API
-I've used **Picsum** **API** to get the data and description about photographs;
+I've used **Picsum** **API** to get the data and description about photographs; <br>
 Link to the website-> [Picsum](https://picsum.photos/).
 
 

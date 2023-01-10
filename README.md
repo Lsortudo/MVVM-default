@@ -2,7 +2,7 @@
 # Project M
 
 
-This is a simple idea just to pratice concepts like MVVM, Lifecycle, LiveData and Design Patterns
+This is a simple idea just to pratice concepts like **MVVM**, **Retrofit**, **Lifecycle**, **LiveData** and **Design Patterns**
 
 ## API
 I've used **Picsum** **API** to get the data and description about photographs; <br>
